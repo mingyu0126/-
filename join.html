@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FeelLog - Join</title>
+  <link rel="stylesheet" href="project2.css">
+</head>
+<body>
+
+  <!-- 헤더가 로드될 자리 -->
+ <div id="header-placeholder"></div>
+ 
+
+  <!-- 회원가입 페이지 내용 -->
+  <div class="auth-page">
+    <h2>Join</h2>
+    <form action="process_join.php" method="post">
+      <input type="text" placeholder="Username" name="username" required>
+      <input type="email" placeholder="Email" name="email" required>
+      <input type="password" placeholder="Password" name="password" required>
+      <button type="submit">Join</button>
+    </form>
+  </div>
+  <script src="header.js"></script>
+  <script src="join.js"></script>
+</body>
+</html>

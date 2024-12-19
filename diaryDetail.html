@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FeelLog - Diary Detail</title>
+  <link rel="stylesheet" href="project2.css">
+  <link rel="stylesheet" href="diaryDetail.css">
+</head>
+<body>
+  <!-- 헤더 -->
+  <div id="header-placeholder"></div>
+ 
+  <!-- 메인 컨텐츠 -->
+  <main class="container">
+    <!-- 일기 섹션 -->
+    <div class="diary-section">
+      <div class="diary-header">
+        <h2 id="detail-date">날짜 없음</h2>
+        <hr>
+      </div>
+      <p id="diary-content" disabled>작성된 일기가 없습니다.</p>
+    </div>
+
+    <!-- 감정 분석 섹션 -->
+    <div class="analysis-section">
+      <h2>감정 분석 결과</h2>
+      <p id="analysis-result">분석 데이터 없음</p>
+      <div class="action-buttons">
+        <button class="edit-button">일기 수정</button>
+        <button class="save-button" style="display: none;">저장</button>
+        <button class="delete-button">일기 삭제</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="header.js"></script>
+  <script src="diaryDetail.js"></script>
+</body>
+</html>
