@@ -1,0 +1,141 @@
+/* 전체 컨테이너 레이아웃 */
+.eq-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* 섹션 간 거리 증가 */
+    padding: 40px;
+    max-width: 1400px; /* 더 넓은 가로 너비 */
+    margin: 80px auto 0; /* 헤더와의 공간 추가 및 중앙 정렬 */
+    align-items: flex-start;
+  }
+  
+  /* 감정 보고서 섹션 */
+  .emotion-report {
+    flex: 1;
+    background: linear-gradient(to bottom, #ffffff, #f9fcff); /* 세련된 그라데이션 */
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* 더 부드러운 그림자 */
+    padding: 25px;
+    max-width: 650px; /* 섹션 더 넓게 */
+    transition: transform 0.3s, box-shadow 0.3s; /* 호버 효과 추가 */
+  }
+  
+  .emotion-report:hover {
+    transform: translateY(-5px); /* 살짝 떠오르는 효과 */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .report-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  #emotion-chart {
+    width: 280px !important; /* 차트 크기 살짝 증가 */
+    height: 280px !important;
+    margin-bottom: 20px;
+  }
+  
+  .emotion-summary {
+    font-size: 18px; /* 적당한 크기 */
+    color: #00796b;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .emotion-context p {
+    font-size: 15px; /* 조금 더 읽기 편한 크기 */
+    margin: 8px 0;
+    color: #555;
+  }
+  
+  /* 추천 활동 섹션 */
+  .recommended-activities {
+    flex: 1;
+    background: linear-gradient(to bottom, #ffffff, #f0f8ff); /* 섹션 그라데이션 */
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    max-width: 650px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .recommended-activities:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .activity {
+    margin-bottom: 20px; /* 카드 간격 살짝 증가 */
+    padding: 20px;
+    border: 1px solid rgba(0, 183, 161, 0.2);
+    border-radius: 15px;
+    background: rgba(240, 250, 255, 0.8); /* 더 고급스러운 반투명 효과 */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .activity:hover {
+    transform: scale(1.05); /* 확대 효과 */
+    box-shadow: 0 6px 15px rgba(0, 183, 161, 0.2);
+  }
+  
+  .activity h3 {
+    font-size: 18px; /* 제목 크기 적당히 증가 */
+    margin-bottom: 12px;
+    color: #00796b;
+  }
+  
+  .activity p {
+    font-size: 15px;
+    color: #555;
+  }
+  
+  iframe {
+    width: 100%; /* 반응형 크기 유지 */
+    height: 180px; /* 비디오 높이 조금 증가 */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 여백 추가 */
+  body {
+    padding: 20px;
+    background: linear-gradient(to bottom, #e0f7fa, #6bc9c5); /* 기존 배경 색상 유지 */
+  }
+  /* 감정 선택 드롭다운 */
+#emotion-select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+    transition: border-color 0.3s;
+  }
+  
+  #emotion-select:hover {
+    border-color: #00796b;
+  }
+  
+  .dates-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .date-link {
+    color: #00796b;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .date-link:hover {
+    color: #004d40;
+    text-decoration: underline;
+  }

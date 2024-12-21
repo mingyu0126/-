@@ -1,0 +1,242 @@
+/* 캘린더 전용 스타일 */
+.calendar-custom {
+    font-family: 'Raleway', sans-serif !important; /* 캘린더 전용 폰트 */
+  }
+  
+  .calendar-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* 캘린더 헤더 */
+  .calendar-header .title,
+  .calendar-header .prevBtn,
+  .calendar-header .nextBtn,
+  .daies .day,
+  .dates .date {
+    font-family: 'Raleway', sans-serif !important; /* 캘린더 폰트 강제 적용 */
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .calendar-header .prevBtn,
+  .calendar-header .nextBtn {
+    font-size: 14px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .calendar-header .prevBtn:hover,
+  .calendar-header .nextBtn:hover {
+    background-color: #005b4f;
+  }
+  
+  .calendar-header .title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #00796b;
+  }
+  
+  /* 요일 스타일 */
+  .daies {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .day {
+    width: calc(100% / 7);
+    text-align: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+  }
+  
+  /* 날짜 스타일 */
+  .dates {
+    display: flex;
+    flex-wrap: wrap; /* 줄바꿈 허용 */
+    justify-content: space-between;
+  }
+  
+  .date {
+    width: calc(100% / 7);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  .date:hover {
+    background-color: #f9f9f9;
+  }
+  
+  /* 일요일 스타일 */
+  .date:nth-child(7n+1),
+  .day:nth-child(7n+1) {
+    background-color: #FFE6E6;
+    color: red;
+  }
+  
+  /* 토요일 스타일 */
+  .date:nth-child(7n),
+  .day:nth-child(7n) {
+    background-color: #E6F7FF;
+    color: blue;
+  }
+  
+ /* 캘린더 전용 스타일 */
+.calendar-custom {
+    font-family: 'Raleway', sans-serif !important; /* 캘린더 전용 폰트 */
+  }
+  
+  .calendar-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* 캘린더 헤더 */
+  .calendar-header .title,
+  .calendar-header .prevBtn,
+  .calendar-header .nextBtn,
+  .daies .day,
+  .dates .date {
+    font-family: 'Raleway', sans-serif !important; /* 캘린더 폰트 강제 적용 */
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .calendar-header .prevBtn,
+  .calendar-header .nextBtn {
+    font-size: 14px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .calendar-header .prevBtn:hover,
+  .calendar-header .nextBtn:hover {
+    background-color: #005b4f;
+  }
+  
+  .calendar-header .title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #00796b;
+  }
+  
+  /* 요일 스타일 */
+  .daies {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .day {
+    width: calc(100% / 7);
+    text-align: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+  }
+  
+  /* 날짜 스타일 */
+  .dates {
+    display: flex;
+    flex-wrap: wrap; /* 줄바꿈 허용 */
+    justify-content: space-between;
+    
+}
+  
+  .date {
+    width: calc(100% / 7);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  .date:hover {
+    background-color: #f9f9f9;
+  }
+  
+  /* 일요일 스타일 */
+  .date:nth-child(7n+1),
+  .day:nth-child(7n+1) {
+    background-color: #FFE6E6;
+    color: red;
+  }
+  
+  /* 토요일 스타일 */
+  .date:nth-child(7n),
+  .day:nth-child(7n) {
+    background-color: #E6F7FF;
+    color: blue;
+  }
+ /* 이전/다음 달 날짜 스타일 */
+.not-current-month {
+    color: #d3d3d3; /* 연한 회색 */
+    pointer-events: none; /* 클릭 불가능 */
+}
+
+/* 이전/다음 달의 일요일 텍스트 색상 변경 */
+.not-current-month.sunday {
+    color: #ffcccc; /* 연한 빨간색 */
+}
+
+/* 이전/다음 달의 토요일 텍스트 색상 변경 */
+.not-current-month.saturday {
+    color: #ccccff; /* 연한 파란색 */
+}
+
+/* 현재 달의 날짜 호버 스타일 */
+.date:hover:not(.not-current-month) {
+    background-color: #f9f9f9;
+}
+
+
+  
+  

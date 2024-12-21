@@ -1,0 +1,115 @@
+/* 전체 배경 */
+body {
+    background: linear-gradient(to bottom, #6bc9c5, #e0f7fa 80%);
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* 마이페이지 컨테이너 */
+  .my-page {
+    max-width: 900px;
+    width: 90%;
+    padding: 40px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(245, 245, 245, 0.8));
+    border-radius: 25px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    margin-top: 80px; /* 헤더와 컨테이너 사이 공간 추가 */
+  }
+  
+  /* 사용자 정보 섹션 */
+  .profile-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile-picture-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6bc9c5, #00796b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-picture {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+  }
+  
+  /* 다이어리 요약 */
+  .summary-cards {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .card {
+    flex: 1;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(245, 245, 245, 0.8));
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-icon img {
+    width: 50px;
+    margin-bottom: 15px;
+  }
+  
+  /* 계정 설정 */
+  .settings-buttons {
+    display: flex;
+    justify-content: flex-end; /* 오른쪽 정렬 */
+    gap: 15px;
+  }
+  
+ .button-secondary {
+    padding: 14px 24px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  
+  
+  .button-secondary {
+    background: #f44336;
+    color: white;
+  }
+  
+  .button-secondary:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(244, 67, 54, 0.3);
+  }
+  

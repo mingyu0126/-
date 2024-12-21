@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FeelLog - My Page</title>
+  <link rel="stylesheet" href="project2.css">
+  <link rel="stylesheet" href="mypage.css">
+</head>
+<body>
+  <!-- 헤더 -->
+  <div id="header-placeholder"></div>
+
+   <!-- 마이페이지 본문 -->
+   <main class="my-page">
+    <!-- 사용자 정보 섹션 -->
+    <section class="user-info">
+      <div class="profile-card">
+        <div class="profile-picture-container">
+          <img src="default-profile.png" alt="Profile Picture" class="profile-picture">
+        </div>
+        <div class="user-details">
+          <h2 id="user-name"></h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- 다이어리 요약 섹션 -->
+    <section class="diary-summary">
+      <h3>다이어리 요약</h3>
+      <div class="summary-cards">
+        <div class="card">
+          <h4>작성한 다이어리 수</h4>
+          <p id="diary-count">0</p>
+        </div>
+        <div class="card">
+          <h4>최근 작성한 날짜</h4>
+          <p id="late-diary-date">-</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 계정 설정 섹션 -->
+    <section class="account-settings">
+      <h3>계정 설정</h3>
+      <div class="settings-buttons">
+        
+        <button  id="delete-account" class="button-secondary">계정 탈퇴</button>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- JavaScript -->
+  <script src="header.js"></script>
+  <script type="module" src="mypage.js"></script>
+</body>
+</html>

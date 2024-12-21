@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeelLog - 일기 수정</title>
+    <link rel="stylesheet" href="project2.css"> <!-- 기존 스타일 -->
+    <link rel="stylesheet" href="diaryEdit.css"> <!-- 수정 페이지 전용 스타일 -->
+</head>
+<body>
+   <!-- 헤더가 로드될 자리 -->
+ <div id="header-placeholder"></div>
+ 
+    <!-- 수정 페이지 컨테이너 -->
+    <div class="container">
+        <!-- 기존 일기 표시 -->
+        <div class="original-diary-section">
+            <h2>기존 일기</h2>
+            <div id="original-diary" class="diary-box">
+                작성된 일기가 없습니다.
+            </div>
+        </div>
+
+        <!-- 수정 가능한 텍스트박스 -->
+        <div class="edit-diary-section">
+            <h2>일기 수정</h2>
+            <textarea id="edit-diary" class="diary-textarea" placeholder="수정 내용을 입력하세요..."></textarea>
+            <button class="save-button">저장</button>
+        </div>
+    </div>
+
+    <script src="header.js"></script>
+    <script src="diaryEdit.js"></script> <!-- 수정 페이지 전용 JavaScript -->
+</body>
+</html>
