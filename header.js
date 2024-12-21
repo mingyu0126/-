@@ -111,3 +111,4 @@ document.addEventListener("DOMContentLoaded", () => {
         writeDiaryButton.addEventListener("click", checkDiaryAndNavigate);
     }
 });
+

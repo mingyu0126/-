@@ -169,3 +169,5 @@ document.querySelector(".delete-button")?.addEventListener("click", () => {
         alert("삭제할 일기가 없습니다.");
     }
 });
+
+       

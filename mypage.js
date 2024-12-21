@@ -159,4 +159,5 @@ document.addEventListener("DOMContentLoaded", async () => {
       lateDiaryDateElement.textContent = "조회 실패";
     }
   }
+
 });

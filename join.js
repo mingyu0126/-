@@ -44,4 +44,5 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
       console.error("join-form을 찾을 수 없습니다.");
   }
+
 });
