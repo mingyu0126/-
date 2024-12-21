@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FeelLog - Calendar</title>
+  <link rel="stylesheet" href="project2.css">
+  <link rel="stylesheet" href="calendar.css">
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="복사본.png" alt="FeelLog">
+      </a>
+    </div>
+    <nav class="nav-menu">
+      <a href="diary.html">Diary</a>
+      <a href="#statistics">EQ 높이기</a>
+      <a href="calendar.html" class="active">Calendar</a>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html">Login</a>
+      <a href="join.html" class="join-button">Join</a>
+    </div>
+  </header>
+
+  <!-- 캘린더 본문 -->
+  <main class="main-content">
+    <section class="calendar-section calendar-custom">
+      <div class="calendar-container">
+        <div class="calendar-box">
+          <!-- 캘린더 헤더 -->
+          <div class="calendar-header">
+            <button class="prevBtn" onclick="prevCal()">prev</button>
+            <div class="title">
+              <span class="yearTitle">2024</span> <span class="monthTitle">11</span>
+            </div>
+            <button class="nextBtn" onclick="nextCal()">next</button>
+          </div>
+          <!-- 요일 -->
+          <div class="daies">
+            <div class="day">Sun</div>
+            <div class="day">Mon</div>
+            <div class="day">Tue</div>
+            <div class="day">Wed</div>
+            <div class="day">Thu</div>
+            <div class="day">Fri</div>
+            <div class="day">Sat</div>
+          </div>
+          <!-- 날짜 -->
+          <div class="dates"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="calendar.js"></script>
+</body>
+</html>

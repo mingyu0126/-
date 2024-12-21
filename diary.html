@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeelLog - 일기 쓰기</title>
+    <link rel="stylesheet" href="project2.css"> <!-- CSS 파일 연결 -->
+</head>
+<body>
+
+    <!-- 헤더가 로드될 자리 -->
+    <div id="header-placeholder"></div>
+ 
+    <!-- 일기 쓰기 섹션 -->
+    <div class="diary-entry-container">
+        <div class="diary-header">
+            <h2 id="current-date"></h2>
+            <hr>
+        </div>
+        <textarea id="diary-content" class="diary-content" placeholder="오늘의 일기를 작성해보세요..."></textarea>
+        <button id="save-diary" class="save-button">저장</button>
+    </div>
+
+    <!-- 자바스크립트 파일 연결 -->
+    <script src="header.js"></script>
+    <script src="diary.js"></script>
+
+</body>
+</html>
