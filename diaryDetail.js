@@ -110,7 +110,7 @@ const emotionMapping = {
           fetch(`http://localhost:8080/diaries/user/date?date=${encodeURIComponent(date)}`, {
               method: 'GET',
               headers: {
-                  'Authorization': `Bearer ${token}`,
+                  'Authorization': `${token}`,
                   'Content-Type': 'application/json'
               }
           })
@@ -121,9 +121,13 @@ const emotionMapping = {
               return response.json();
           })
           .then(data => {
+
               // 일기 데이터를 불러와서 수정 페이지로 이동
-              const parsedContent = JSON.parse(data.content); // content를 JSON으로 파싱
-              window.location.href = `diaryEdit.html?date=${encodeURIComponent(date)}&content=${encodeURIComponent(parsedContent.content)}`; // 수정 페이지로 이동
+              if (typeof data.content === 'string') {
+                window.location.href = `diaryEdit.html?date=${encodeURIComponent(date)}&content=${encodeURIComponent(data.content)}`; // 수정 페이지로 이동
+            } else {
+                alert("일기 내용이 유효하지 않습니다.");
+            }
           })
           .catch(error => {
               console.error('API 호출 중 오류 발생:', error);
@@ -204,7 +208,7 @@ const emotionMapping = {
   
   
   
-  
+
   // API 호출 후 결과를 표시하는 예시
   fetch(`http://localhost:8080/emotionper?date=${encodeURIComponent(date)}`, {
     method: "GET",
