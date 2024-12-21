@@ -219,4 +219,5 @@ fetch(`http://localhost:8080/emotionper?date=${encodeURIComponent(date)}`, {
 })
 .catch(error => {
   console.error("Error:", error);
+
 });
