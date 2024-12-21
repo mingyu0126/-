@@ -110,20 +110,25 @@ document.querySelector(".edit-button").addEventListener("click", () => {
         fetch(`http://localhost:8080/diaries/user/date?date=${encodeURIComponent(date)}`, {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${token}`,
+                'Authorization': `${token}`,
                 'Content-Type': 'application/json'
             }
         })
         .then(response => {
+          console.log("일기 응답 상태 코드:", response.status);
             if (!response.ok) {
                 throw new Error('네트워크 응답이 좋지 않습니다.');
             }
             return response.json();
         })
         .then(data => {
+            console.log("일기 API 응답 데이터:", data);
             // 일기 데이터를 불러와서 수정 페이지로 이동
-            const parsedContent = JSON.parse(data.content); // content를 JSON으로 파싱
-            window.location.href = `diaryEdit.html?date=${encodeURIComponent(date)}&content=${encodeURIComponent(parsedContent.content)}`; // 수정 페이지로 이동
+            if (typeof data.content === 'string') {
+                window.location.href = `diaryEdit.html?date=${encodeURIComponent(date)}&content=${encodeURIComponent(data.content)}`; // 수정 페이지로 이동
+            } else {
+                alert("일기 내용이 유효하지 않습니다.");
+            }
         })
         .catch(error => {
             console.error('API 호출 중 오류 발생:', error);
