@@ -124,7 +124,7 @@ document.querySelector(".edit-button").addEventListener("click", () => {
             return response.json();
         })
         .then(data => {
-            console.log("일기 API ���답 데이터:", data);
+            console.log("일기 API 응답 데이터:", data);
             // 일기 데이터를 불러와서 수정 페이지로 이동
             if (typeof data.content === 'string') {
                 window.location.href = `diaryEdit.html?date=${encodeURIComponent(date)}&content=${encodeURIComponent(data.content)}`; // 수정 페이지로 이동
