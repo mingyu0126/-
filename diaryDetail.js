@@ -4,8 +4,8 @@ const emotionMapping = {
   2: '분노',
   3: '공포',
   4: '슬픔',
-  5: '놀람',
-  6: '사랑'
+  5: '사랑',
+  6: '놀람'
 };
 
 
@@ -124,106 +124,107 @@ document.querySelector(".edit-button").addEventListener("click", () => {
             return response.json();
         })
         .then(data => {
-            console.log("일기 API ���답 데이터:", data);
+            console.log("일기 API 응답 데이터:", data);
             // 일기 데이터를 불러와서 수정 페이지로 이동
             if (typeof data.content === 'string') {
                 window.location.href = `diaryEdit.html?date=${encodeURIComponent(date)}&content=${encodeURIComponent(data.content)}`; // 수정 페이지로 이동
             } else {
                 alert("일기 내용이 유효하지 않습니다.");
             }
+        })
+        .catch(error => {
+            console.error('API 호출 중 오류 발생:', error);
+            alert("일기 데이터를 불러오는 데 실패했습니다.");
+        });
+    } else {
+        alert("날짜 정보가 없습니다."); // 날짜가 없을 경우 경고
+    }
+});
+
+
+
+
+
+
+// 삭제 버튼 클릭 처리
+document.querySelector(".delete-button").addEventListener("click", () => {
+  const params = new URLSearchParams(window.location.search);
+  /* const diaryId = params.get("id"); */
+  const date = params.get("date");
+/* 
+  if (!diaryId) {
+      alert(diaryId+"잘못된 접근입니다.");
+      window.location.href = "diary.html";
+      return;
+  }
+ */
+  const token = localStorage.getItem("token");
+  if (!token) {
+      alert("로그인이 필요합니다.");
+      window.location.href = "login.html";
+      return;
+  }
+
+  const confirmDelete = confirm("정말로 이 일기를 삭제하시겠습까?");
+  if (confirmDelete) {
+      fetch(`http://localhost:8080/diaries/delete?date=${encodeURIComponent(date)}`, {
+          method: "DELETE",
+          headers: {
+              "Authorization": `${token}`,
+              "Content-Type": "application/json",
+          },
+      })
+          .then(response => {
+              if (response.ok) {
+                  alert("일기가 삭제되었습니다.");
+                  window.location.href = "diary.html";
+              } else {
+                  throw new Error("일기 삭제 실패");
+              }
           })
           .catch(error => {
-              console.error('API 호출 중 오류 발생:', error);
-              alert("일기 데이터를 불러오는 데 실패했습니다.");
+              console.error("일기 삭제 중 오류 발생:", error.message);
+              alert("일기를 삭제하지 못했습니다.");
           });
-      } else {
-          alert("날짜 정보가 없습니다."); // 날짜가 없을 경우 경고
-      }
-  });
-  
-  
-  
-  
-  
-  
-  // 삭제 버튼 클릭 처리
-  document.querySelector(".delete-button").addEventListener("click", () => {
-    const params = new URLSearchParams(window.location.search);
-    /* const diaryId = params.get("id"); */
-    const date = params.get("date");
-  /* 
-    if (!diaryId) {
-        alert(diaryId+"잘못된 접근입니다.");
-        window.location.href = "diary.html";
-        return;
-    }
-   */
-    const token = localStorage.getItem("token");
-    if (!token) {
-        alert("로그인이 필요합니다.");
-        window.location.href = "login.html";
-        return;
-    }
-  
-    const confirmDelete = confirm("정말로 이 일기를 삭제하시겠습까?");
-    if (confirmDelete) {
-        fetch(`http://localhost:8080/diaries/delete?date=${encodeURIComponent(date)}`, {
-            method: "DELETE",
-            headers: {
-                "Authorization": `${token}`,
-                "Content-Type": "application/json",
-            },
-        })
-            .then(response => {
-                if (response.ok) {
-                    alert("일기가 삭제되었습니다.");
-                    window.location.href = "diary.html";
-                } else {
-                    throw new Error("일기 삭제 실패");
-                }
-            })
-            .catch(error => {
-                console.error("일기 삭제 중 오류 발생:", error.message);
-                alert("일기를 삭제하지 못했습니다.");
-            });
-    }
-  });
-  
-  
-  
-  
-  
-  // 감정 분석 결과를 표시하는 함수
-  function displayEmotionResults(emotionData) {
-    const analysisResult = document.getElementById("analysis-result");
-    analysisResult.innerHTML = ""; // 기존 내용을 지웁니다.
-  
-    emotionData.forEach(emotion => {
-        const listItem = document.createElement("li");
-        // 감정 ID를 감정 이름으로 변환
-        const emotionName = emotionMapping[emotion.emotionId] || '알 수 없음';
-        listItem.textContent = `감정: ${emotionName}, 비율: ${emotion.per}`;
-        analysisResult.appendChild(listItem);
-    });
   }
-  
-  
-  
-  
-  
+});
 
-  // API 호출 후 결과를 표시하는 예시
-  fetch(`http://localhost:8080/emotionper?date=${encodeURIComponent(date)}`, {
-    method: "GET",
-    headers: {
-        "Authorization": `Bearer ${token}`,
-        "Content-Type": "application/json",
-    },
-  })
-  .then(response => response.json())
-  .then(data => {
-    displayEmotionResults(data); // 감정 분석 결과를 표시합니다.
-  })
-  .catch(error => {
-    console.error("Error:", error);
+
+
+
+
+// 감정 분석 결과를 표시하는 함수
+function displayEmotionResults(emotionData) {
+  const analysisResult = document.getElementById("analysis-result");
+  analysisResult.innerHTML = ""; // 기존 내용을 지웁니다.
+
+  emotionData.forEach(emotion => {
+      const listItem = document.createElement("li");
+      // 감정 ID를 감정 이름으로 변환
+      const emotionName = emotionMapping[emotion.emotionId] || '알 수 없음';
+      listItem.textContent = `감정: ${emotionName}, 비율: ${emotion.per}`;
+      analysisResult.appendChild(listItem);
   });
+}
+
+
+
+
+
+
+// API 호출 후 결과를 표시하는 예시
+fetch(`http://localhost:8080/emotionper?date=${encodeURIComponent(date)}`, {
+  method: "GET",
+  headers: {
+      "Authorization": `Bearer ${token}`,
+      "Content-Type": "application/json",
+  },
+})
+.then(response => response.json())
+.then(data => {
+  displayEmotionResults(data); // 감정 분석 결과를 표시합니다.
+})
+.catch(error => {
+  console.error("Error:", error);
+
+});
