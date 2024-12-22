@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     data.forEach((item) => {
                         const dateElement = document.createElement("p");
                         const percentage = (item.highestPercentage*100).toFixed(0);
-                        dateElement.textContent = `날짜: ${item.date}, 비율: ${percentage}`;
+                        dateElement.textContent = `날짜: ${item.date}, 비율: ${percentage}%`;
                         emotionDatesContainer.appendChild(dateElement);
                     });
                 } else {
