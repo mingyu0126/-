@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
             },
         });
-
+//=========================================
 
 
     const emotionSummary = document.getElementById("main-emotion");
@@ -207,6 +207,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 초기 데이터 로드: 주요 감정을 기본으로 표시
     emotionSummary.textContent = "감정을 선택해주세요.";
+
+
+//==========================추천활동==================================
+
+    
 });
 
 
