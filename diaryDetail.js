@@ -45,7 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("일기 API 응답 데이터:", data);
       if (data && data.content) {
           diaryDateElement.textContent = `날짜: ${date}`;
-          diaryContentElement.textContent = data.content;
+          // JSON 문자열을 파싱하여 실제 내용만 가져옵니다.
+          const diaryContent = JSON.parse(data.content).content;
+          diaryContentElement.textContent = diaryContent;
           
           // 감정 분석 결과 가져오기
           return fetch(`http://localhost:8080/emotion/result?date=${encodeURIComponent(date)}`, {
@@ -122,7 +124,7 @@ document.querySelector(".edit-button").addEventListener("click", () => {
             return response.json();
         })
         .then(data => {
-            console.log("일기 API 응답 데이터:", data);
+            console.log("일기 API ���답 데이터:", data);
             // 일기 데이터를 불러와서 수정 페이지로 이동
             if (typeof data.content === 'string') {
                 window.location.href = `diaryEdit.html?date=${encodeURIComponent(date)}&content=${encodeURIComponent(data.content)}`; // 수정 페이지로 이동
