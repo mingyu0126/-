@@ -6,8 +6,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const editDiaryElement = document.getElementById("edit-diary");
 
     if (content) {
-        originalDiaryElement.textContent = content; // 기존 일기 내용을 표시
-        editDiaryElement.value = content; // 수정할 내용으로 기존 일기 내용을 표시
+        try {
+            const parsedContent = JSON.parse(decodeURIComponent(content)); // JSON 파싱
+            originalDiaryElement.textContent = parsedContent.content; // 기존 일기 내용을 표시
+            editDiaryElement.value = parsedContent.content; // 수정할 내용으로 기존 일기 내용을 표시
+        } catch (error) {
+            console.error("일기 내용 파싱 오류:", error.message);
+        }
+
+        // content 파라미터 제거
+        params.delete("content");
+        const newUrl = window.location.pathname + '?' + params.toString();
+        window.history.replaceState({}, '', newUrl); // URL 업데이트
     }
 
     // 저장 버튼 클릭 처리
@@ -16,13 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const date = params.get("date"); // 수정할 날짜 가져오기
         const token = localStorage.getItem("token");
 
-        fetch(`http://localhost:8080/diaries/update`, {
+        console.log("Date:", date); // 추가된 로그
+        console.log("Updated Content:", updatedContent); // 추가된 로그
+
+        fetch(`http://localhost:8080/diary/update?date=${date}`, {
             method: "PUT",
             headers: {
-                "Authorization": `Bearer ${token}`,
+                "Authorization": `${token}`,
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ date, content: updatedContent }) // 수정된 내용 전송
+            body: JSON.stringify({ content: updatedContent })
         })
         .then(response => {
             if (response.ok) {
