@@ -204,11 +204,11 @@ document.addEventListener("DOMContentLoaded", () => {
         })
             .then((response) => {
                 if (!response.ok) {
-                    if (response.status === 404) {
+                    if (response.status === 404|| response.status === 500) {
                         throw new Error("일기를 먼저 작성해주세요!!");
-                    } else {
-                        throw new Error(`추천 활동 데이터를 가져오는 데 실패했습니다. 상태 코드: ${response.status}`);
-                    }
+                     } //else {
+                    //     throw new Error(`추천 활동 데이터를 가져오는 데 실패했습니다. 상태 코드: ${response.status}`);
+                    // }
                 }
                 return response.json();
             })

@@ -11,7 +11,7 @@ function buildCalendar() {
 
   // 연도 및 월 업데이트
   document.querySelector(".yearTitle").textContent = CDate.getFullYear();
-  document.querySelector(".monthTitle").textContent = String(CDate.getMonth() + 1).padStart(2, '0');
+  document.querySelector(".monthTitle").textContent =String(CDate.getMonth() + 1).padStart(2, '0');
 
   // 날짜 배열 생성
   let dates = [];
